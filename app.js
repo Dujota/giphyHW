@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
         .then(response => response.json())
         .then(data => {
           data.data.forEach(item => {
-            console.log(item);
             output = `<div class="card" style="width: 18rem;">
               <img class="card-img-top" src="${
                 item.images.fixed_height.url
@@ -60,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
         .catch(error => console.log(error));
     }
   };
-  console.log(pokemonList);
   loadButtons(pokemonList, 'buttons');
   document.getElementById('buttons').addEventListener('click', getGhiphy);
 });
