@@ -59,6 +59,23 @@ document.addEventListener('DOMContentLoaded', function(e) {
         .catch(error => console.log(error));
     }
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    //grab the input field and its value
+    pokemon = document.getElementById('addbutton').value;
+    if (!pokemonList.includes(pokemon)) {
+      pokemonList.push(pokemon);
+    }
+
+    // reload the new list of buttons
+    loadButtons(pokemonList, 'buttons');
+  };
+
+  // Load buttons and attach Click Listeners
   loadButtons(pokemonList, 'buttons');
+
   document.getElementById('buttons').addEventListener('click', getGhiphy);
+
+  document.querySelector('form').addEventListener('submit', handleSubmit);
 });
