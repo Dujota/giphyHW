@@ -64,10 +64,11 @@ document.addEventListener('DOMContentLoaded', function(e) {
     e.preventDefault();
     //grab the input field and its value
     pokemon = document.getElementById('addbutton').value;
-    if (!pokemonList.includes(pokemon)) {
+    if (!pokemonList.includes(pokemon) && pokemon !== '') {
       pokemonList.push(pokemon);
     }
 
+    document.getElementById('addbutton').value = '';
     // reload the new list of buttons
     loadButtons(pokemonList, 'buttons');
   };
