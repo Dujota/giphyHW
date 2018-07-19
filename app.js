@@ -5,7 +5,13 @@ document.addEventListener('DOMContentLoaded', function(e) {
     'Ursaring',
     'Spinda',
     'Banette Mega',
-    'Accelgor'
+    'Accelgor',
+    'Cyndaquil',
+    'Rhyperior',
+    'Samurott',
+    'Cleffa',
+    'Tentacool',
+    'Pichu'
   ];
 
   const loadButtons = (pokemonList, container) => {
@@ -31,13 +37,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
     let output = '';
 
     if (pokemonList.includes(pokemon)) {
-      let url = `http://api.giphy.com/v1/gifs/search?q=${pokemon}&api_key=Fqls5JhCEWL5A6ObgtJ2OdM14WHCH2f7&limit=5`;
+      let url = `http://api.giphy.com/v1/gifs/search?q=${pokemon}&api_key=Fqls5JhCEWL5A6ObgtJ2OdM14WHCH2f7&limit=20`;
       fetch(`${url}`)
         .then(response => response.json())
         .then(data => {
           data.data.forEach(item => {
             console.log(item);
-            debugger;
             output = `<div class="card" style="width: 18rem;">
               <img class="card-img-top" src="${
                 item.images.fixed_height.url
