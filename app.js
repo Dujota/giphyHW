@@ -45,7 +45,9 @@ document.addEventListener('DOMContentLoaded', function(e) {
             output = `<div class="card" style="width: 18rem;">
               <img class="card-img-top" src="${
                 item.images.fixed_height_still.url
-              }?text=Image cap" alt="Card image cap">
+              }?text=Image cap" alt="Card image cap" data-animate=${
+              item.images.fixed_height.url
+            }>
               <div class="card-body">
                 <p class="card-text">This little pokemon is rated ${
                   item.rating
@@ -73,10 +75,13 @@ document.addEventListener('DOMContentLoaded', function(e) {
     loadButtons(pokemonList, 'buttons');
   };
 
+  const animateGif = e => {
+    e.target.setAttribute('src', e.target.getAttribute('data-animate'));
+  };
+
   // Load buttons and attach Click Listeners
   loadButtons(pokemonList, 'buttons');
-
   document.getElementById('buttons').addEventListener('click', getGhiphy);
-
   document.querySelector('form').addEventListener('submit', handleSubmit);
+  document.getElementById('gifContainer').addEventListener('click', animateGif);
 });
