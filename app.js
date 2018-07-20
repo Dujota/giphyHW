@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
           data.data.forEach(item => {
             output = `<div class="card" style="width: 18rem;">
               <img class="card-img-top" src="${
-                item.images.fixed_height.url
+                item.images.fixed_height_still.url
               }?text=Image cap" alt="Card image cap">
               <div class="card-body">
                 <p class="card-text">This little pokemon is rated ${
